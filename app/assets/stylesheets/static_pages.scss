@@ -1,0 +1,57 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .btn-primary {
+    color: #fff;
+    background-color: #222;
+    border-color: #222;
+}
+.sidebar ul li a{
+    width: 255px;
+    color: #999;
+}
+.nav-sidebar li a{
+    padding: 15px 60px;
+    background-color: #000;
+}
+.navbar-fixed-top {
+    border: 0;
+    background-color: #333;
+    color: #9d9d9d;
+}
+
+.navbar-inverse .navbar-nav>li {
+    color: #9d9d9d;
+}
+.sidebar>li>ul>a:hover {
+    color: #9d9d9d;
+}
+
+.side-nav li a:focus,
+.side-nav>ul>li>a:hover {
+    font-size: 14px;
+    color: #9d9d9d;  
+        outline: none;
+        background-color: #000 !important;    
+    
+      
+
+}
+
+}

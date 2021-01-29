@@ -1,0 +1,40 @@
+<% if flash[:vendor_created] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:vendor_created] %></strong>
+  </div>
+<% end %>
+<% if flash[:success_update] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:success_update] %></strong>
+  </div>
+<% end %>
+<% if flash[:success_delete] %>
+  <div class="alert alert-success">
+    <strong><%= flash[:success_delete] %></strong>
+  </div>
+<% end %>
+<% if flash[:error_delete] %>
+  <div class="alert alert-danger">
+    <strong><%= flash[:error_delete] %></strong>
+  </div>
+<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor[:name] %></td>
+        <td><%= vendor[:email] %></td>
+        <td><%= link_to "Editar", edit_vendor_path(vendor[:id]) %></td>
+        <td><%= link_to "Eliminar", vendor_path(vendor[:id]), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

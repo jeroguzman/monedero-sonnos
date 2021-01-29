@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <% if flash[:used_points] %>
+    <div class="alert alert-success">
+      <strong><%= flash[:used_points] %></strong>
+    </div>
+  <% end %>
+  <% if flash[:added_points] %>
+    <div class="alert alert-success">
+      <strong><%= flash[:added_points] %></strong>
+    </div>
+  <% end %>
+  <div class="row-fluid">
+    <div class="col-md-5  toppad  pull-left col-md-offset-3 ">
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= @client_profile.name %></h3>
+        </div>
+        <div class=" col-md-9 col-lg-9 ">
+          <table class="table table-user-information">
+            <tbody>
+              <td>Numero de cliente </td>
+              <td><%= @client.client_number %></td>
+              <tr>
+                <td>Saldo actual</td>
+                <td><%= @point_number %></td>
+              </tr>
+              <tr>
+                <td>Fecha de nacimiento</td>
+                <td><%= @client_profile.birthdate %></td>
+              </tr>
+              <tr>
+                <td>Correo Electronico</td>
+                <td><%= @client_profile.email %></td>
+              </tr>
+              <td>Numero de telefono</td>
+              <td><%= @client_profile.phone %></td>
+              </tr>
+              <tr>
+                <td>Modelo de Telefono</td>
+                <td><%= @client_profile.phone_model %></td>
+              </tr>
+              <tr>
+                <td>Tarjeta</td>
+                <td><%= @card.title %></td>
+              </tr>
+              <tr>
+                <td>Porcentaje</td>
+                <td><%= @card.percent %></td>
+              </tr>
+            </tbody>
+          </table>
+          <%= link_to "Agregar puntos.", new_client_balance_path(@client.id), class:'btn btn-primary form-control' %>
+          <% if @point_number > 0 %>
+            <%= link_to "Utilizar puntos.", client_balances_use_new_path(@client.id), class:'btn btn-primary form-control' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Puntos</th>
+        <th>Fecha</th>
+        <th>Vendedor</th>
+        <th>Detalles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @balances.each do |balance| %>
+        <% if !balance.archived %>
+          <tr>
+            <td><%= balance.point %></td>
+            <td><%= balance.created_at.strftime("%I:%M:%S%p %d-%m-%Y") %></td>
+            <td><%= balance.vendor.name %></td>
+            <% if balance.balance_information %>
+              <td><%= link_to "Ver detalles.", client_balance_balance_information_path(@client.id, balance.id, balance.balance_information.id) %></td>
+            <% else %>
+              <td><%= link_to "Ver detalles.", use_point_path(balance.id) %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="row-fluid">
+    <%= paginate @balances %>
+  </div>
+</div>

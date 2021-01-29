@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav navbar-nav side-nav">
+        <% if is_branch_office? %>
+        
+          <li class="active"><%= link_to 'Clientes', clients_path %></li>
+          <li><%= link_to 'Buscar cliente', root_path %></li>
+          <li><%= link_to 'Registrar cliente', new_client_path %></li>
+          <li><%= link_to 'Ver Vendedores', vendors_path %></li>
+          <li><%= link_to 'Registrar vendedor', new_vendor_path %></li>
+          <li><%= link_to 'Registrar Tarjeta', new_card_path %></li>
+          <li><%= link_to 'Ver tarjetas', cards_path %></li>
+        <% end %>
+        <% if is_admin? %>
+          <li><%= link_to 'Registrar Sucursal', new_user_path %></li>
+          <li><%= link_to 'Ver sucursales', users_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

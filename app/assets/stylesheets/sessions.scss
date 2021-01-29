@@ -1,0 +1,185 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@media (min-width: 980px) {
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+            div.session-background {
+    background: #222; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #0264d6 1%, #1c2b5a 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#0264d6), color-stop(100%,#1c2b5a)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #0264d6 1%,#1c2b5a 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #0264d6 1%,#1c2b5a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0264d6', endColorstr='#1c2b5a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+height:calc(100vh);
+width:100%;
+}
+
+#login form{
+	width: 250px;
+}
+#login .logo{
+    display:inline-block;
+    width:40%;
+}
+#login{
+border-left:1px solid #fff;
+  padding: 0px 50px;
+  width: 59%;
+}
+.logo{
+color:#fff;
+font-size:50px;
+}
+
+* {
+  box-sizing: border-box;
+    margin:0px auto;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+
+}
+
+.container-box {
+	border: none;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	padding: 0;
+	-webkit-appearance: none;
+}
+
+
+.clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+.fluid-container {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login form .input {
+	height: 50px;
+}
+fieldset{
+    padding:0;
+    border:0;
+    margin: 0;
+
+}
+#login form .input[type="text"], input[type="password"] {
+	background-color: #fff;
+	border-radius: 0px 3px 3px 0px;
+	color: #000;
+	margin-bottom: 1em;
+	padding: 0 16px;
+	width: 200px;
+}
+
+#login form .input[type="submit"] {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #000000;
+  color: #eee;
+  font-weight: bold;
+  /* margin-bottom: 2em; */
+  padding: 5px 10px;
+  height: 30px;
+}
+
+#login form .btn-primary[type="submit"]:hover {
+	background-color: #000;
+}
+
+#login > p {
+	text-align: center;
+}
+
+
+
+          
+            #output.alert-success{
+              background: rgb(25, 204, 25);
+            }
+            #output.alert-danger{
+              background: rgb(228, 105, 105);
+            }
+           
+            .form-box input{
+              width: 100%;
+              padding: 10px;
+              text-align: center;
+              height:40px;
+              border: 1px solid #ccc;;
+              transition:0.2s ease-in-out;
+            }
+            .form-box input:focus{
+              outline: 0;
+              background: #eee;
+            }
+            .form-box input[type="text"]{
+              border-radius: 5px 5px 0 0;
+            }
+            .form-box input[type="password"]{
+              border-radius: 0 0 5px 5px;
+              border-top: 0;
+            }
+            .form-box button.login{
+              margin-top:15px;
+              padding: 10px 20px;
+            }
+            .animated {
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+            }
+            @-webkit-keyframes fadeInUp {
+              0% {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+                transform: translateY(20px);
+              }
+              100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+              }
+            }
+            @keyframes fadeInUp {
+              0% {
+                opacity: 0;
+                -webkit-transform: translateY(20px);
+                -ms-transform: translateY(20px);
+                transform: translateY(20px);
+              }
+              100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -ms-transform: translateY(0);
+                transform: translateY(0);
+              }
+            }

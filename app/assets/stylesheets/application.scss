@@ -1,0 +1,9 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "sessions.scss";
+@import "static_pages.scss";
+@import "_grid.scss";
+@import "clients.scss";
+@import "show.scss";
